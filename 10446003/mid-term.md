@@ -12,6 +12,9 @@
 ```ruby
 class Cat
   # 請完成實作
+  def initialize(name)
+  @name = name
+  end
 end
 
 kitty = Cat.new("kitty")
@@ -31,14 +34,16 @@ p profile["name"]
 ```
 
 會得到什麼結果? 為什麼?
+  得到 nil，因為在這個Hash中，它的key是:name(Symbol符號)，而不是字串"name"。
 
 3. (5 分) 如果要在 1 到 100 的數字當中，任意取出 5 個不重複的亂數，你會怎麼做？
+  puts [*1..100].sample(5)
 
 4. (10 分)
 ```ruby
 class Bank
   def transfer(amount)
-    # ...
+    # ...    
   end
 end
 
@@ -78,12 +83,15 @@ user_profile = {name: "kk", age: 18, blood_type: :b_negative}
 ```
 
 請問，這三種寫法分別代表什麼意思呢？
+  :products代表 products是一個Symbol，是Store類別的實體
 
 ## Rails 題目 (30 分)
 
 1. (10 分) 請簡述 `bundle install` 指令的用途。
+  可以只輸入bundle就是bundle install了。 每次有修改Gemfile這個檔案，都需要重新執行bundle
 
 2. (10 分) 請說明 `rails db:migrate` 這個指令的用途是什麼？
+  如果 Migration 寫錯，只要修改後再重新執行 rails db:migrate 指令就行了。
 
 3. (10 分) 假設某個 Controller 的程式碼如下：
 
